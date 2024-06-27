@@ -1,4 +1,4 @@
-import {View, Text , StyleSheet, Button} from "react-native";
+import {View, Text , StyleSheet, Button, Image} from "react-native";
 import { NavigationContainer } from "@react-navigation/native"; 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -28,7 +28,22 @@ function TelaInicio( {route, navigation}){
 }
 
 function telaIFC({route, navigation}){
-    
+    return(
+        <View>
+        <Text style={styles.titulo}> IFC - Campus Ibirama </Text>
+       <Image 
+       style={styles.imagemifc}
+       source={require('./imagens/ifc.png')} 
+       />
+       <Text> O Instituto Federal Catarinense - Campus Ibirama, oferece três cursos de tecnico integrado ao ensino médio. Nascido em 2011, o instituto conta com diversos servidores e alunos </Text>
+       <Button 
+       title='Voltar'
+       color="white"
+       onPress={function(){ navigation.navigate(TelaInicio) }}
+       />
+       </View>
+       
+    )
 }
 
 
