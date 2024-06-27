@@ -19,7 +19,7 @@ function TelaInicio( {route, navigation}){
                 title="Página de cursos"
                 color="#07da5c"
                 onPress={function(){
-                    navigation.navigate("SelecionarCurso")
+                    navigation.navigate("TelaEscolherCurso")
                 }}
             ></Button>
 
@@ -39,6 +39,11 @@ export default function App() {
                   component={TelaInicio}
                   options={{title:"Tela inicial"}}
               />
+
+              <PilhaTelas.Screen
+              name="TelaEscolherCurso"
+              component={TelaEscolherCurso}
+              options={{title:"Tela Para Ecolher O Curso"}}></PilhaTelas.Screen>
           </PilhaTelas.Navigator>
       </NavigationContainer>
     );
@@ -57,8 +62,46 @@ export default function App() {
       fontSize: 20
     }
   });
+
 function telaIFC({route, navigation}){
     
+}
+
+function TelaEscolherCurso( route, navigation){
+    return( 
+        <View style={styles.container}>
+            <Text style={styles.titulo}>Escolha um curso</Text>
+            <Button 
+                title="Adminstração"
+                color="blue"
+                onPress={function(){
+                    navigation.navigate('TelaAdmintração',{
+                        
+                    })
+                }}
+            ></Button>
+
+            <Button 
+                title="Informática"
+                color="green"
+                onPress={function(){
+                    navigation.navigate('TelaInformatica',{
+                        
+                    })
+                }}
+            ></Button>
+
+            <Button 
+                title="Vestuário"
+                color="pink"
+                onPress={function(){
+                    navigation.navigate('TelaVestuário',{
+                        
+                    })
+                }}
+            ></Button>
+        </View>
+    )
 }
 
 
