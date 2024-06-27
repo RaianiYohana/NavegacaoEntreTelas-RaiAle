@@ -2,7 +2,7 @@ import {View, Text , StyleSheet, Button} from "react-native";
 import { NavigationContainer } from "@react-navigation/native"; 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const PilhasTelas = createNativeStackNavigator()
+const PilhaTelas = createNativeStackNavigator()
 
 function TelaInicio( {route, navigation}){
     return(
@@ -26,3 +26,34 @@ function TelaInicio( {route, navigation}){
         </View>
     )
 }
+
+
+
+export default function App() {
+  
+    return (
+      <NavigationContainer>
+          <PilhaTelas.Navigator initialRouteName='PrimeiraTela'>
+              <PilhaTelas.Screen
+                  name="TelaInicio"
+                  component={TelaInicio}
+                  options={{title:"Tela inicial"}}
+              />
+          </PilhaTelas.Navigator>
+      </NavigationContainer>
+    );
+  }
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'top',
+      width: '100%'
+    },
+    titulo: {
+      marginTop: '10%',
+      fontSize: 20
+    }
+  });
