@@ -44,29 +44,23 @@ export default function App() {
               name="TelaEscolherCurso"
               component={TelaEscolherCurso}
               options={{title:"Tela Para Ecolher O Curso"}}></PilhaTelas.Screen>
+
+<PilhaTelas.Screen
+              name="OutraTela"
+              component={TelaIFC}
+              options={{title:"Tela sobre o IFC - Campus Ibirama"}}></PilhaTelas.Screen>
+
           </PilhaTelas.Navigator>
       </NavigationContainer>
     );
   }
 
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'top',
-      width: '100%'
-    },
-    titulo: {
-      marginTop: '10%',
-      fontSize: 20
-    }
-  });
+  
 
-function telaIFC({route, navigation}){
+function TelaIFC({route, navigation}){
     return(
         <View>
-        <Text style={styles.titulo}> IFC - Campus Ibirama </Text>
+        <Text style={styles.titulo2}> IFC - Campus Ibirama </Text>
        <Image 
        style={styles.imagemifc}
        source={require('./imagens/ifc.png')} 
@@ -121,4 +115,25 @@ function TelaEscolherCurso( route, navigation){
 }
 
 
-
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'top',
+      width: '100%'
+    },
+    titulo: {
+      marginTop: '10%',
+      fontSize: 20
+    },
+    titulo2: {
+        width: '90%',
+        fontSize: 40,
+        
+    },
+    imagemifc: {
+width: '95%',
+height: 270
+}
+  });
