@@ -2,7 +2,7 @@ import {View, Text , StyleSheet, Button, Image} from "react-native";
 import { NavigationContainer } from "@react-navigation/native"; 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const PilhasTelas = createNativeStackNavigator()
+const PilhaTelas = createNativeStackNavigator()
 
 function TelaInicio( {route, navigation}){
     return(
@@ -19,13 +19,49 @@ function TelaInicio( {route, navigation}){
                 title="Página de cursos"
                 color="#07da5c"
                 onPress={function(){
-                    navigation.navigate("SelecionarCurso")
+                    navigation.navigate("TelaEscolherCurso")
                 }}
             ></Button>
 
         </View>
     )
 }
+
+
+
+export default function App() {
+  
+    return (
+      <NavigationContainer>
+          <PilhaTelas.Navigator initialRouteName='PrimeiraTela'>
+              <PilhaTelas.Screen
+                  name="TelaInicio"
+                  component={TelaInicio}
+                  options={{title:"Tela inicial"}}
+              />
+
+              <PilhaTelas.Screen
+              name="TelaEscolherCurso"
+              component={TelaEscolherCurso}
+              options={{title:"Tela Para Ecolher O Curso"}}></PilhaTelas.Screen>
+          </PilhaTelas.Navigator>
+      </NavigationContainer>
+    );
+  }
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'top',
+      width: '100%'
+    },
+    titulo: {
+      marginTop: '10%',
+      fontSize: 20
+    }
+  });
 
 function telaIFC({route, navigation}){
     return(
@@ -43,6 +79,43 @@ function telaIFC({route, navigation}){
        />
        </View>
        
+    )
+}
+
+function TelaEscolherCurso( route, navigation){
+    return( 
+        <View style={styles.container}>
+            <Text style={styles.titulo}>Escolha um curso</Text>
+            <Button 
+                title="Adminstração"
+                color="blue"
+                onPress={function(){
+                    navigation.navigate('TelaAdmintração',{
+                        
+                    })
+                }}
+            ></Button>
+
+            <Button 
+                title="Informática"
+                color="green"
+                onPress={function(){
+                    navigation.navigate('TelaInformatica',{
+                        
+                    })
+                }}
+            ></Button>
+
+            <Button 
+                title="Vestuário"
+                color="pink"
+                onPress={function(){
+                    navigation.navigate('TelaVestuário',{
+                        
+                    })
+                }}
+            ></Button>
+        </View>
     )
 }
 
