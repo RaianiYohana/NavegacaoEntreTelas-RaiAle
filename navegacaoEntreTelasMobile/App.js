@@ -57,3 +57,9 @@ export default function App() {
       fontSize: 20
     }
   });
+function telaIFC({route, navigation}){
+    
+}
+
+
+
