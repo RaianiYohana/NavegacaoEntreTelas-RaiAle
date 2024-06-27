@@ -82,6 +82,7 @@ function telaIFC({route, navigation}){
     )
 }
 
+
 function TelaEscolherCurso( route, navigation){
     return( 
         <View style={styles.container}>
