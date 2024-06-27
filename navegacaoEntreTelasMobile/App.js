@@ -26,3 +26,10 @@ function TelaInicio( {route, navigation}){
         </View>
     )
 }
+
+function telaIFC({route, navigation}){
+    
+}
+
+
+
