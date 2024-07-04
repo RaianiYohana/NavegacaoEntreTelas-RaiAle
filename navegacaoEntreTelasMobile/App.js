@@ -1,6 +1,7 @@
 import {View, Text , StyleSheet, Button, Image} from "react-native";
 import { NavigationContainer } from "@react-navigation/native"; 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Table, Row, Rows } from 'react-native-table-component';
 
 const PilhaTelas = createNativeStackNavigator()
 
@@ -88,6 +89,41 @@ function TelaIFC({route, navigation}){
     )
 }
 
+<<<<<<< Updated upstream
+=======
+// function Informática({route, navigation}){
+//     tabela = {
+//         tableHead: ['Matéria', 'Professor'],
+//         tableData: [
+//           ['Tiago Funk', 'Fundamentos da informática' ],
+//           ['Tiago Funk', 'Engenharia de Software'],
+//           ['Tiago Funk', 'Web Design'],
+//           ['Tiago Funk', 'Programação 2'],
+//           ['Tiago Funk', 'Programação Mobile'],
+//         ['Rodrigo Nogueira', 'Projeto Integrador 1']
+//         ['Rodrigo Nogueira', 'Projeto Integrador 3']
+//         ['Rodrigo Nogueira', 'Banco de Dados']
+//         ['', '']    
+//         ['', '']
+//         ['', '']
+//         ]
+//       }
+//     return(
+//         <View>
+// <Text style={styles.tituloInfo}> Informática</Text>
+// <Image
+// style={styles.imagemInfo}
+// source={require('.imagens/informática.png')}
+// />
+// <Text>O curso Técnico em Informática Integrado ao Ensino Médio oferta disciplinas técnicas relacionadas com a área de TECNOLOGIA DA INFORMAÇÃO (TI) integradas às disciplinas tradicionais do ENSINO MÉDIO. Das 3400 horas de curso, 1050 horas destinam-se a unidades curriculares da área técnica. No entanto, o curso visa à interseção entre as áreas técnica e comum, com ênfase na prática profissional e com possibilidade de realização de estágios não obrigatórios.</Text>
+// {/* <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
+//           <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
+//           <Rows data={state.tableData} textStyle={styles.text}/>
+//         </Table> */}
+// </View>
+//     )
+// }
+>>>>>>> Stashed changes
 
 function TelaEscolherCurso( route, navigation){
     return( 
@@ -97,8 +133,14 @@ function TelaEscolherCurso( route, navigation){
                 title="Adminstração"
                 color="blue"
                 onPress={function(){
+<<<<<<< Updated upstream
                     navigation.navigate('TelaAdmintracao',{
                         
+=======
+                    navigation.navigate('TelaAdmintração',{
+                        descricao:"O curso Técnico em Informática Integrado ao Ensino Médio oferta disciplinas técnicas relacionadas com a área de TECNOLOGIA DA INFORMAÇÃO (TI) integradas às disciplinas tradicionais do ENSINO MÉDIO. Das 3400 horas de curso, 1050 horas destinam-se a unidades curriculares da área técnica. No entanto, o curso visa à interseção entre as áreas técnica e comum, com ênfase na prática profissional e com possibilidade de realização de estágios não obrigatórios.",
+
+>>>>>>> Stashed changes
                     })
                 }}
             ></Button>
@@ -108,7 +150,10 @@ function TelaEscolherCurso( route, navigation){
                 color="green"
                 onPress={function(){
                     navigation.navigate('TelaInformatica',{
-                        
+                        nome:"Informática",
+ imagem: require('./imagens/informática.png/'),
+                        descricao:"O curso Técnico em Informática Integrado ao Ensino Médio oferta disciplinas técnicas relacionadas com a área de TECNOLOGIA DA INFORMAÇÃO (TI) integradas às disciplinas tradicionais do ENSINO MÉDIO. Das 3400 horas de curso, 1050 horas destinam-se a unidades curriculares da área técnica. No entanto, o curso visa à interseção entre as áreas técnica e comum, com ênfase na prática profissional e com possibilidade de realização de estágios não obrigatórios.",
+                       
                     })
                 }}
             ></Button>
@@ -117,8 +162,14 @@ function TelaEscolherCurso( route, navigation){
                 title="Vestuário"
                 color="pink"
                 onPress={function(){
+<<<<<<< Updated upstream
                     navigation.navigate('TelaVestuario',{
                         
+=======
+                    navigation.navigate('TelaVestuário',{
+                        descricao:"O curso Técnico em Informática Integrado ao Ensino Médio oferta disciplinas técnicas relacionadas com a área de TECNOLOGIA DA INFORMAÇÃO (TI) integradas às disciplinas tradicionais do ENSINO MÉDIO. Das 3400 horas de curso, 1050 horas destinam-se a unidades curriculares da área técnica. No entanto, o curso visa à interseção entre as áreas técnica e comum, com ênfase na prática profissional e com possibilidade de realização de estágios não obrigatórios.",
+
+>>>>>>> Stashed changes
                     })
                 }}
             ></Button>
@@ -127,6 +178,7 @@ function TelaEscolherCurso( route, navigation){
 }
 
 
+<<<<<<< Updated upstream
 // function TelaAdmintracao (route, navigation){
 //     return(
 //         <View>
@@ -164,6 +216,24 @@ function TelaEscolherCurso( route, navigation){
        
 //     )
 // }
+=======
+
+
+function TelaCurso({route, navigation} ){
+    return(
+        <View style={styles.container2}>
+            <Text style={styles.titulo}>{route.params.nome}</Text>
+            <Image style={styles.imagensifc}> {route.params.imagem}</Image>
+        <Text>{route.params.descricao}</Text>
+ 
+        </View>
+    )
+}
+
+
+
+
+>>>>>>> Stashed changes
 
 const styles = StyleSheet.create({
     container: {
