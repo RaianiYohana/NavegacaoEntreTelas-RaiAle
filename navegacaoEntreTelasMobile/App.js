@@ -52,16 +52,16 @@ export default function App() {
               options={{title:"Tela sobre o IFC - Campus Ibirama"}}></PilhaTelas.Screen>
 
               <PilhaTelas.Screen
-              name="TelaAdmintracao"
-              component={TelaAdmintracao}
+              name="TelaCurso"
+              component={TelaCurso}
               options={{title:"Tela sobre o curso de Administração"}}
               ></PilhaTelas.Screen>
 
-                <PilhaTelas.Screen
-              name="TelaVestuario"
-              component={TelaVestuario}
+                {/* <PilhaTelas.Screen
+              name="TelaCurso"
+              component={TelaCurso}
               options={{title:"Tela sobre o curso de Vestuário"}}
-              ></PilhaTelas.Screen>
+              ></PilhaTelas.Screen> */}
 
           </PilhaTelas.Navigator>
       </NavigationContainer>
@@ -89,8 +89,6 @@ function TelaIFC({route, navigation}){
     )
 }
 
-<<<<<<< Updated upstream
-=======
 // function Informática({route, navigation}){
 //     tabela = {
 //         tableHead: ['Matéria', 'Professor'],
@@ -123,9 +121,8 @@ function TelaIFC({route, navigation}){
 // </View>
 //     )
 // }
->>>>>>> Stashed changes
 
-function TelaEscolherCurso( route, navigation){
+function TelaEscolherCurso( {route, navigation} ){
     return( 
         <View style={styles.container}>
             <Text style={styles.titulo}>Escolha um curso</Text>
@@ -133,14 +130,11 @@ function TelaEscolherCurso( route, navigation){
                 title="Adminstração"
                 color="blue"
                 onPress={function(){
-<<<<<<< Updated upstream
-                    navigation.navigate('TelaAdmintracao',{
-                        
-=======
-                    navigation.navigate('TelaAdmintração',{
-                        descricao:"O curso Técnico em Informática Integrado ao Ensino Médio oferta disciplinas técnicas relacionadas com a área de TECNOLOGIA DA INFORMAÇÃO (TI) integradas às disciplinas tradicionais do ENSINO MÉDIO. Das 3400 horas de curso, 1050 horas destinam-se a unidades curriculares da área técnica. No entanto, o curso visa à interseção entre as áreas técnica e comum, com ênfase na prática profissional e com possibilidade de realização de estágios não obrigatórios.",
+                    navigation.navigate('TelaCurso',{
+                        nome:"Adminstração",
+                     imagem:require('./imagens/adm.png'),
+                        descricao:"Assim, o profissional Técnico em Administração pode atuar nas instituições públicas, privadas e do terceiro setor que demandem atividades de gestão, trabalhando especialmente no suporte e apoio nos mais diversos setores.",
 
->>>>>>> Stashed changes
                     })
                 }}
             ></Button>
@@ -149,36 +143,37 @@ function TelaEscolherCurso( route, navigation){
                 title="Informática"
                 color="green"
                 onPress={function(){
-                    navigation.navigate('TelaInformatica',{
+                    navigation.navigate('TelaCurso',{
                         nome:"Informática",
- imagem: require('./imagens/informática.png/'),
+                     imagem:require('./imagens/informatica.png'),
                         descricao:"O curso Técnico em Informática Integrado ao Ensino Médio oferta disciplinas técnicas relacionadas com a área de TECNOLOGIA DA INFORMAÇÃO (TI) integradas às disciplinas tradicionais do ENSINO MÉDIO. Das 3400 horas de curso, 1050 horas destinam-se a unidades curriculares da área técnica. No entanto, o curso visa à interseção entre as áreas técnica e comum, com ênfase na prática profissional e com possibilidade de realização de estágios não obrigatórios.",
                        
                     })
                 }}
             ></Button>
 
-            <Button 
+        <Button 
                 title="Vestuário"
                 color="pink"
-                onPress={function(){
-<<<<<<< Updated upstream
-                    navigation.navigate('TelaVestuario',{
-                        
-=======
-                    navigation.navigate('TelaVestuário',{
-                        descricao:"O curso Técnico em Informática Integrado ao Ensino Médio oferta disciplinas técnicas relacionadas com a área de TECNOLOGIA DA INFORMAÇÃO (TI) integradas às disciplinas tradicionais do ENSINO MÉDIO. Das 3400 horas de curso, 1050 horas destinam-se a unidades curriculares da área técnica. No entanto, o curso visa à interseção entre as áreas técnica e comum, com ênfase na prática profissional e com possibilidade de realização de estágios não obrigatórios.",
+                onPress={function(){                        
+                    navigation.navigate('TelaCurso',{
+                        nome:"Vestuário",
+                     imagem:require('./imagens/vestuario.png'),
+                        descricao:"O curso Técnico em Vestuário Integrado ao Ensino Médio objetiva proporcionar aos discentes o desenvolvimento de sua autonomia enquanto cidadãos críticos e participativos, visando o domínio dos conhecimentos científicos e tecnológicos, para atuarem de maneira consciente e responsável diante das necessidades atuais no mundo do trabalho, com foco na formação e a qualificação de profissionais com visão técnica para atuarem na área de confecção do vestuário, aptos a gerenciar e operacionalizar as diversas etapas do processo de produção do vestuário, em empresas da área industrial e de prestação de serviços."
 
->>>>>>> Stashed changes
                     })
                 }}
             ></Button>
+            {/* 
+
+            <
+
+             */}
         </View>
     )
 }
 
 
-<<<<<<< Updated upstream
 // function TelaAdmintracao (route, navigation){
 //     return(
 //         <View>
@@ -216,14 +211,13 @@ function TelaEscolherCurso( route, navigation){
        
 //     )
 // }
-=======
 
 
 function TelaCurso({route, navigation} ){
     return(
         <View style={styles.container2}>
             <Text style={styles.titulo}>{route.params.nome}</Text>
-            <Image style={styles.imagensifc}> {route.params.imagem}</Image>
+            <Image style={styles.imagensifc} source={route.params.imagem}/>
         <Text>{route.params.descricao}</Text>
  
         </View>
@@ -233,12 +227,11 @@ function TelaCurso({route, navigation} ){
 
 
 
->>>>>>> Stashed changes
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#fff',  
       alignItems: 'center',
       justifyContent: 'top',
       width: '100%'
@@ -256,11 +249,7 @@ const styles = StyleSheet.create({
     width: '95%',
     height: 270
     },
-    adm: {
-        width: '95%',
-        height: 270
-    },
-    vest: {
+    imagensifc: {
         width: '95%',
         height: 270
     }
