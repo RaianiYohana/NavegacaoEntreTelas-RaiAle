@@ -1,4 +1,4 @@
-import {View, Text , StyleSheet, Button, Image} from "react-native";
+import {View, Text , StyleSheet, Button, Image, ScrollView} from "react-native";
 import { NavigationContainer } from "@react-navigation/native"; 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Table, Row, Rows } from 'react-native-table-component';
@@ -89,44 +89,14 @@ function TelaIFC({route, navigation}){
     )
 }
 
-// function Informática({route, navigation}){
-//     tabela = {
-//         tableHead: ['Matéria', 'Professor'],
-//         tableData: [
-//           ['Tiago Funk', 'Fundamentos da informática' ],
-//           ['Tiago Funk', 'Engenharia de Software'],
-//           ['Tiago Funk', 'Web Design'],
-//           ['Tiago Funk', 'Programação 2'],
-//           ['Tiago Funk', 'Programação Mobile'],
-//         ['Rodrigo Nogueira', 'Projeto Integrador 1']
-//         ['Rodrigo Nogueira', 'Projeto Integrador 3']
-//         ['Rodrigo Nogueira', 'Banco de Dados']
-//         ['', '']    
-//         ['', '']
-//         ['', '']
-//         ]
-//       }
-//     return(
-//         <View>
-// <Text style={styles.tituloInfo}> Informática</Text>
-// <Image
-// style={styles.imagemInfo}
-// source={require('.imagens/informática.png')}
-// />
-// <Text>O curso Técnico em Informática Integrado ao Ensino Médio oferta disciplinas técnicas relacionadas com a área de TECNOLOGIA DA INFORMAÇÃO (TI) integradas às disciplinas tradicionais do ENSINO MÉDIO. Das 3400 horas de curso, 1050 horas destinam-se a unidades curriculares da área técnica. No entanto, o curso visa à interseção entre as áreas técnica e comum, com ênfase na prática profissional e com possibilidade de realização de estágios não obrigatórios.</Text>
-// {/* <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
-//           <Row data={state.tableHead} style={styles.head} textStyle={styles.text}/>
-//           <Rows data={state.tableData} textStyle={styles.text}/>
-//         </Table> */}
-// </View>
-//     )
-// }
 
 function TelaEscolherCurso( {route, navigation} ){
     return( 
         <View style={styles.container}>
             <Text style={styles.titulo}>Escolha um curso</Text>
+            
             <Button 
+            
                 title="Adminstração"
                 color="blue"
                 onPress={function(){
@@ -134,7 +104,14 @@ function TelaEscolherCurso( {route, navigation} ){
                         nome:"Adminstração",
                      imagem:require('./imagens/adm.png'),
                         descricao:"Assim, o profissional Técnico em Administração pode atuar nas instituições públicas, privadas e do terceiro setor que demandem atividades de gestão, trabalhando especialmente no suporte e apoio nos mais diversos setores.",
-
+                        
+                        tableHead: ['Professor', 'Matéria/as', ],
+                        tableData: [
+                            ['ANDRE LUIZ KOPELKE ', 'ECONOMIA, GESTÃO DA PRODUÇÃO E LOGÍSTICA, GESTÃO DE PESSOAS, RESPONSABILIDADE SOCIAL EMPRESARIAL.' ],
+                            ['JETER LANG', 'FUNDAMENTOS DA ADMINISTRAÇÃO, GESTÃO DE SERVIÇOS, PROJETO INTEGRADOR I, PROJETO INTEGRADOR II, ADMINISTRAÇÃO E EMPREENDEDORISMO.'],
+                            ['PAULO ROBERTO SILVEIRA MACHADO', 'MARKETING, ADMINISTRAÇÃO DA TECNOLOGIA DA INFORMAÇÃO, PROJETO INTEGRADOR III, GESTÃO DE ATELIER DE CONFECÇÃO.'],
+                            ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                        ]       
                     })
                 }}
             ></Button>
@@ -147,7 +124,38 @@ function TelaEscolherCurso( {route, navigation} ){
                         nome:"Informática",
                      imagem:require('./imagens/informatica.png'),
                         descricao:"O curso Técnico em Informática Integrado ao Ensino Médio oferta disciplinas técnicas relacionadas com a área de TECNOLOGIA DA INFORMAÇÃO (TI) integradas às disciplinas tradicionais do ENSINO MÉDIO. Das 3400 horas de curso, 1050 horas destinam-se a unidades curriculares da área técnica. No entanto, o curso visa à interseção entre as áreas técnica e comum, com ênfase na prática profissional e com possibilidade de realização de estágios não obrigatórios.",
-                       
+                        tableHead: ['Professor', 'Matéria/as', ],
+                        tableData: [
+                            ['ANDRE LUIZ KOPELKE ', 'ECONOMIA, GESTÃO DA PRODUÇÃO E LOGÍSTICA, GESTÃO DE PESSOAS, RESPONSABILIDADE SOCIAL EMPRESARIAL.' ],
+                            ['JETER LANG', 'FUNDAMENTOS DA ADMINISTRAÇÃO, GESTÃO DE SERVIÇOS, PROJETO INTEGRADOR I, PROJETO INTEGRADOR II, ADMINISTRAÇÃO E EMPREENDEDORISMO.'],
+                            ['PAULO ROBERTO SILVEIRA MACHADO', 'MARKETING, ADMINISTRAÇÃO DA TECNOLOGIA DA INFORMAÇÃO, PROJETO INTEGRADOR III, GESTÃO DE ATELIER DE CONFECÇÃO.'],
+                            ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                        ]  
                     })
                 }}
             ></Button>
@@ -174,53 +182,19 @@ function TelaEscolherCurso( {route, navigation} ){
 }
 
 
-// function TelaAdmintracao (route, navigation){
-//     return(
-//         <View>
-//         <Text style={styles.titulo2}> Adminstração </Text>
-//        <Image 
-//        style={styles.adm}
-//        source={require('./imagens/adm.png')} 
-//        />
-//        <Text> O Curso Técnico em Administração tem por objetivo proporcionar aos estudantes o desenvolvimento de sua autonomia enquanto cidadãos críticos e participativos, visando ao domínio dos conhecimentos científicos e tecnológicos da administração, para atuarem de maneira consciente e responsável diante das necessidades atuais no mundo do trabalho. </Text>
-//        <Button 
-//        title='Voltar'
-//        color="white"
-//        onPress={function(){ navigation.navigate(TelaEscolherCurso) }}
-//        />
-//        </View>
-       
-//     )
-// }
-
-// function TelaVestuario (route, navigation){
-//     return(
-//         <View>
-//         <Text style={styles.titulo2}> Vestuario </Text>
-//        <Image 
-//        style={styles.vest}
-//        source={require('./imagens/vestuario.png')} 
-//        />
-//        <Text> O curso Técnico em Vestuário Integrado ao Ensino Médio objetiva proporcionar aos discentes o desenvolvimento de sua autonomia enquanto cidadãos críticos e participativos, visando o domínio dos conhecimentos científicos e tecnológicos, para atuarem de maneira consciente e responsável diante das necessidades atuais no mundo do trabalho, com foco na formação e a qualificação de profissionais com visão técnica para atuarem na área de confecção do vestuário, aptos a gerenciar e operacionalizar as diversas etapas do processo de produção do vestuário, em empresas da área industrial e de prestação de serviços. </Text>
-//        <Button 
-//        title='Voltar'
-//        color="white"
-//        onPress={function(){ navigation.navigate(TelaEscolherCurso) }}
-//        />
-//        </View>
-       
-//     )
-// }
-
-
 function TelaCurso({route, navigation} ){
     return(
-        <View style={styles.container2}>
+    <ScrollView>
+        <View >
             <Text style={styles.titulo}>{route.params.nome}</Text>
             <Image style={styles.imagensifc} source={route.params.imagem}/>
-        <Text>{route.params.descricao}</Text>
- 
+            <Text>{route.params.descricao}</Text>
+            <Table style={styles.tabela}>
+                <Row data={route.params.tableHead}/>
+                <Rows data={route.params.tableData}/>
+            </Table> 
         </View>
+    </ScrollView>
     )
 }
 
@@ -252,5 +226,8 @@ const styles = StyleSheet.create({
     imagensifc: {
         width: '95%',
         height: 270
+    },
+    tabela:{
+        marginTop:50
     }
   });
