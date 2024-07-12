@@ -1,4 +1,4 @@
-import {View, Text , StyleSheet, Button, Image, ScrollView} from "react-native";
+import {View, Text , StyleSheet, Button, Image, ScrollView, Table} from "react-native";
 import { NavigationContainer } from "@react-navigation/native"; 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Table, Row, Rows } from 'react-native-table-component';
@@ -57,11 +57,17 @@ export default function App() {
               options={{title:"Tela sobre o curso de Administração"}}
               ></PilhaTelas.Screen>
 
-                {/* <PilhaTelas.Screen
+<PilhaTelas.Screen
+              name="TelaCurso"
+              component={TelaCurso}
+              options={{title:"Tela sobre o curso de Informática"}}
+              ></PilhaTelas.Screen>
+
+                <PilhaTelas.Screen
               name="TelaCurso"
               component={TelaCurso}
               options={{title:"Tela sobre o curso de Vestuário"}}
-              ></PilhaTelas.Screen> */}
+              ></PilhaTelas.Screen>
 
           </PilhaTelas.Navigator>
       </NavigationContainer>
@@ -126,35 +132,37 @@ function TelaEscolherCurso( {route, navigation} ){
                         descricao:"O curso Técnico em Informática Integrado ao Ensino Médio oferta disciplinas técnicas relacionadas com a área de TECNOLOGIA DA INFORMAÇÃO (TI) integradas às disciplinas tradicionais do ENSINO MÉDIO. Das 3400 horas de curso, 1050 horas destinam-se a unidades curriculares da área técnica. No entanto, o curso visa à interseção entre as áreas técnica e comum, com ênfase na prática profissional e com possibilidade de realização de estágios não obrigatórios.",
                         tableHead: ['Professor', 'Matéria/as', ],
                         tableData: [
-                            ['ANDRE LUIZ KOPELKE ', 'ECONOMIA, GESTÃO DA PRODUÇÃO E LOGÍSTICA, GESTÃO DE PESSOAS, RESPONSABILIDADE SOCIAL EMPRESARIAL.' ],
-                            ['JETER LANG', 'FUNDAMENTOS DA ADMINISTRAÇÃO, GESTÃO DE SERVIÇOS, PROJETO INTEGRADOR I, PROJETO INTEGRADOR II, ADMINISTRAÇÃO E EMPREENDEDORISMO.'],
-                            ['PAULO ROBERTO SILVEIRA MACHADO', 'MARKETING, ADMINISTRAÇÃO DA TECNOLOGIA DA INFORMAÇÃO, PROJETO INTEGRADOR III, GESTÃO DE ATELIER DE CONFECÇÃO.'],
+                            ['EDUARDO STAHNKE ', 'LÓGICA DE PROGRAMAÇÃO , PROGRAMAÇÃO 1' ],
+                            ['TIAGO FUNK', 'FUNDAMENTOS DA INFORMÁTICA, PROGAMAÇÃO 2, ENGENHARIA DE SOFTWARE, PROGRAMAÇÃO MOBILE.'],
+                            ['BRUNO GUILHEN', 'ADMINISTRAÇÃO DE REDES, SEGURANÇA COMPUTACIONAL,HARDWARE E SISTEMAS OPERACIONAIS, PROJETO INTEGRADOR 2.'],
                             ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                                ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
-                            ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            ['RODRIGO NOGUEIRA', 'BANCO DE DADOS, PROJETO INTEGRADOR 3']
+
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            //     ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
+                            // ['TIAGO SOUZA ARAÚJO', 'EMPREENDEDORISMO'],
                         ]  
                     })
                 }}
@@ -167,8 +175,16 @@ function TelaEscolherCurso( {route, navigation} ){
                     navigation.navigate('TelaCurso',{
                         nome:"Vestuário",
                      imagem:require('./imagens/vestuario.png'),
-                        descricao:"O curso Técnico em Vestuário Integrado ao Ensino Médio objetiva proporcionar aos discentes o desenvolvimento de sua autonomia enquanto cidadãos críticos e participativos, visando o domínio dos conhecimentos científicos e tecnológicos, para atuarem de maneira consciente e responsável diante das necessidades atuais no mundo do trabalho, com foco na formação e a qualificação de profissionais com visão técnica para atuarem na área de confecção do vestuário, aptos a gerenciar e operacionalizar as diversas etapas do processo de produção do vestuário, em empresas da área industrial e de prestação de serviços."
-
+                        descricao:"O curso Técnico em Vestuário Integrado ao Ensino Médio objetiva proporcionar aos discentes o desenvolvimento de sua autonomia enquanto cidadãos críticos e participativos, visando o domínio dos conhecimentos científicos e tecnológicos, para atuarem de maneira consciente e responsável diante das necessidades atuais no mundo do trabalho, com foco na formação e a qualificação de profissionais com visão técnica para atuarem na área de confecção do vestuário, aptos a gerenciar e operacionalizar as diversas etapas do processo de produção do vestuário, em empresas da área industrial e de prestação de serviços.",
+                        tableHead: ['Professor', 'Matéria/as', ],
+                        tableData: [
+                            ['ANA VIELMO', 'RECONHECIMENTO DE MATERIAIS TEXTEIS,SUSTENTABILIDADE E INOVAÇÃO EM MODA'],
+                            ['FRANCISLETH', 'DESING AUTORAL'],
+                            ['ISABELA FALCHETTI', 'CULTURA E HISTÓRIA DA MODA'],
+                            ['LARIANE DE OLIVEIRA', 'DESENHO DE MODA E ILUSTRAÇÃO'],
+                            ['JONATHAN DE LIMA', ' DESENVOLVIMENTO DE PRODUTO SUSTENTÁVEL, TECNOLOGIA DA COSTURA 1, TECNOLOGIA DA COSTURA 2, TECNOLOGIA DA COSTURA']
+                            ['MÁRCIO MONTICELLI', 'DESENHO TÉCNICO DE VESTUÁRIO E TÊXTIL, DESING TÊXTIL, MODELAGEM 3, MODELAGEM PLANA E TECNOLOGIA'],
+                    ]
                     })
                 }}
             ></Button>
