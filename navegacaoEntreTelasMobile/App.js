@@ -1,4 +1,4 @@
-import {View, Text , StyleSheet, Button, Image, ScrollView, Table} from "react-native";
+import {View, Text , StyleSheet, Button, Image, ScrollView } from "react-native";
 import { NavigationContainer } from "@react-navigation/native"; 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Table, Row, Rows } from 'react-native-table-component';
@@ -54,19 +54,7 @@ export default function App() {
               <PilhaTelas.Screen
               name="TelaCurso"
               component={TelaCurso}
-              options={{title:"Tela sobre o curso de Administração"}}
-              ></PilhaTelas.Screen>
-
-<PilhaTelas.Screen
-              name="TelaCurso"
-              component={TelaCurso}
-              options={{title:"Tela sobre o curso de Informática"}}
-              ></PilhaTelas.Screen>
-
-                <PilhaTelas.Screen
-              name="TelaCurso"
-              component={TelaCurso}
-              options={{title:"Tela sobre o curso de Vestuário"}}
+              options={{title:"Tela sobre o curso"}}
               ></PilhaTelas.Screen>
 
           </PilhaTelas.Navigator>
@@ -231,7 +219,7 @@ const styles = StyleSheet.create({
       fontSize: 20
     },
     titulo2: {
-        width: '90%',
+        width: '90%',   
         fontSize: 40,
         
     },
@@ -245,5 +233,6 @@ const styles = StyleSheet.create({
     },
     tabela:{
         marginTop:50
-    }
+    },
+
   });
